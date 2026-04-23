@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -5,6 +8,7 @@ public class WorldGeneration : MonoBehaviour
 {
     [Header("Ref :")]
     public GameObject worldParent;
+    public List<GameObject> worldObjects = new List<GameObject>();
     [Header ("Event :")]
     public RSE_MapGenerated tilemapGenerated;
 
@@ -19,33 +23,47 @@ public class WorldGeneration : MonoBehaviour
     private int height;
     private void OnEnable()
     {
-        tilemapGenerated.TilemapGenerated += GenerateWorld;
+        tilemapGenerated.TilemapGenerated += TakeEvent;
     }
     private void OnDisable()
     {
-        tilemapGenerated.TilemapGenerated -= GenerateWorld;
+        tilemapGenerated.TilemapGenerated -= TakeEvent;
     }
 
-
-    private void GenerateWorld ()
+    private void TakeEvent ()
+    {
+        EraseCurrentWorld();
+        StartCoroutine(GenerateWorld());
+    }
+    private void EraseCurrentWorld ()
+    {
+        for (int i = 0; i < worldObjects.Count; i++)
+        {
+            Destroy(worldObjects[i]);
+        }
+        worldObjects.Clear();
+    }
+    private IEnumerator GenerateWorld ()
     {
         print("cool");
-        tilemapInfo.tilemap = tilemap;
-        tilemapInfo.Width = width;
-        tilemapInfo.Height = height;
+        tilemap = tilemapInfo.tilemap;
+        width = tilemapInfo.Width ;
+        height = tilemapInfo.Height;
 
         for (int i = 0; i < width; i++)
         {
+            yield return new WaitForSeconds(0.01f);
             for (int j = 0; j < height; j++)
             {
                 TileBase tile = tilemap.GetTile(new Vector3Int(i, j));
                 GameObject _Block = ChooseBlock(tile);
-                print (tile.name);
-                GameObject _Instance = Instantiate(_Block,new Vector3 (i,0.5f,j),Quaternion.Euler(new Vector3(0,0,0)), worldParent.transform);
-                print(_Instance.transform.position.x);
+                print(tile.name);
+                GameObject _Instance = Instantiate(_Block, new Vector3(i, 0.5f, j), Quaternion.Euler(new Vector3(0, 0, 0)), worldParent.transform);
+                worldObjects.Add(_Instance);
             }
         }
     }
+
 
     private GameObject ChooseBlock (TileBase tile)
     {
@@ -65,17 +83,29 @@ public class WorldGeneration : MonoBehaviour
         {
             return blockStorage.m_BlockPrefabs[3];
         }
-        else if (tile.name == "Forest")
+        else if (tile.name == "MidGrass")
         {
             return blockStorage.m_BlockPrefabs[4];
         }
-        else if (tile.name == "Montain")
+        else if (tile.name == "HighGrass")
         {
             return blockStorage.m_BlockPrefabs[5];
         }
-        else 
+        else if (tile.name == "Montain")
         {
             return blockStorage.m_BlockPrefabs[6];
+        }
+        else if (tile.name == "MidMontain")
+        {
+            return blockStorage.m_BlockPrefabs[7];
+        }
+        else if (tile.name == "HighMontain")
+        {
+            return blockStorage.m_BlockPrefabs[8];
+        }
+        else 
+        {
+            return blockStorage.m_BlockPrefabs[9];
         }
     }
 }

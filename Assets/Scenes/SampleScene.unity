@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldGeneration
   worldParent: {fileID: 211669382}
+  worldObjects: []
   tilemapGenerated: {fileID: 11400000, guid: c3e203c531056cd4687d51c7303e4326, type: 2}
   tilemapInfo: {fileID: 11400000, guid: a88a9155d3d0116469bb610b6735cde1, type: 2}
   blockStorage: {fileID: 11400000, guid: cdc7101e01a94304aa21dc16d5b75c26, type: 2}
@@ -462,44 +463,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator2D
   noise:
-    width: 256
-    height: 256
-    scale: 107
-    octaves: 5
-    persistence: 0.242
-    lacunarity: 3.39
+    width: 100
+    height: 100
+    scale: 40
+    octaves: 2
+    persistence: 0.236
+    lacunarity: 3.66
     seed: 63
     offset: {x: 0, y: 0}
   tilemap: {fileID: 1866992246}
-  terrains:
-  - name: DeepOcean
-    color: {r: 0.1, g: 0.3, b: 0.7, a: 1}
-    threshold: 0.25
-    tile: {fileID: 0}
-  - name: Water
-    color: {r: 0.2, g: 0.5, b: 0.85, a: 1}
-    threshold: 0.35
-    tile: {fileID: 0}
-  - name: Sand
-    color: {r: 0.9, g: 0.85, b: 0.6, a: 1}
-    threshold: 0.42
-    tile: {fileID: 0}
-  - name: Grass
-    color: {r: 0.3, g: 0.7, b: 0.3, a: 1}
-    threshold: 0.6
-    tile: {fileID: 0}
-  - name: Forest
-    color: {r: 0.1, g: 0.45, b: 0.15, a: 1}
-    threshold: 0.72
-    tile: {fileID: 0}
-  - name: Montain
-    color: {r: 0.55, g: 0.5, b: 0.45, a: 1}
-    threshold: 0.85
-    tile: {fileID: 0}
-  - name: Snow
-    color: {r: 0.95, g: 0.95, b: 1, a: 1}
-    threshold: 1
-    tile: {fileID: 0}
   mapGenerated: {fileID: 11400000, guid: c3e203c531056cd4687d51c7303e4326, type: 2}
   tilemapInfo: {fileID: 11400000, guid: a88a9155d3d0116469bb610b6735cde1, type: 2}
   blockPrefabStorage: {fileID: 11400000, guid: cdc7101e01a94304aa21dc16d5b75c26, type: 2}
@@ -523,14 +495,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762415648}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1866992248}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

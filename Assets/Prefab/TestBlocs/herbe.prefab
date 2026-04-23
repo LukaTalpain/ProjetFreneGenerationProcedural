@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 285174742856138062}
   - component: {fileID: 2356619364720062452}
   - component: {fileID: 2488969368588231014}
+  - component: {fileID: 7459292403793587662}
   - component: {fileID: 2060058976741154128}
   m_Layer: 0
   m_Name: herbe
@@ -91,6 +92,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7459292403793587662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288792525072900496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7438dd2ff6798344cae5a7eb7ba945b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
+  Height: 2
 --- !u!65 &2060058976741154128
 BoxCollider:
   m_ObjectHideFlags: 0

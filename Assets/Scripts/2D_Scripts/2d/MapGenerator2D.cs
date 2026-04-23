@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,15 +10,17 @@ public class MapGenerator2D : MonoBehaviour
     [Header("Tilemap cible")]
     public Tilemap tilemap;
 
-    [Header("Biomes — du plus bas au plus haut")]
-    public TerrainType[] terrains = new TerrainType[]
+    private TerrainType[] terrains = new TerrainType[]
     {
-        new TerrainType { name = "DeepOcean",    color = new Color(0.10f, 0.30f, 0.70f), threshold = 0.25f },
-        new TerrainType { name = "Water",color = new Color(0.20f, 0.50f, 0.85f), threshold = 0.35f },
-        new TerrainType { name = "Sand",           color = new Color(0.90f, 0.85f, 0.60f), threshold = 0.42f },
-        new TerrainType { name = "Grass",           color = new Color(0.30f, 0.70f, 0.30f), threshold = 0.60f },
-        new TerrainType { name = "Forest",           color = new Color(0.10f, 0.45f, 0.15f), threshold = 0.72f },
-        new TerrainType { name = "Montain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.85f },
+        new TerrainType { name = "DeepOcean",    color = new Color(0.10f, 0.30f, 0.70f), threshold = 0.15f },
+        new TerrainType { name = "Water",color = new Color(0.20f, 0.50f, 0.85f), threshold = 0.25f },
+        new TerrainType { name = "Sand",           color = new Color(0.90f, 0.85f, 0.60f), threshold = 0.30f },
+        new TerrainType { name = "Grass",           color = new Color(0.30f, 0.70f, 0.30f), threshold = 0.40f },
+        new TerrainType { name = "MidGrass",           color = new Color(0.90f, 0.85f, 0.60f), threshold = 0.50f },
+        new TerrainType { name = "HighGrass",           color = new Color(0.10f, 0.45f, 0.15f), threshold = 0.62f },
+        new TerrainType { name = "Montain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.70f },
+        new TerrainType { name = "MidMontain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.80f },
+        new TerrainType { name = "HighMontain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.90f },
         new TerrainType { name = "Snow",           color = new Color(0.95f, 0.95f, 1.00f), threshold = 1.00f },
     };
 
@@ -26,7 +29,22 @@ public class MapGenerator2D : MonoBehaviour
     public RSO_TilemapInfo tilemapInfo;
     public RSO_BlockPrefabStorage blockPrefabStorage;
 
-    private void Start() => Generate();
+    private void Start()
+    {
+        terrains = new TerrainType[] {new TerrainType { name = "DeepOcean",    color = new Color(0.10f, 0.30f, 0.70f), threshold = 0.15f },
+        new TerrainType { name = "Water",color = new Color(0.20f, 0.50f, 0.85f), threshold = 0.25f },
+        new TerrainType { name = "Sand",           color = new Color(0.90f, 0.85f, 0.60f), threshold = 0.30f },
+        new TerrainType { name = "Grass",           color = new Color(0.30f, 0.70f, 0.30f), threshold = 0.40f },
+        new TerrainType { name = "MidGrass",           color = new Color(0.90f, 0.85f, 0.60f), threshold = 0.50f },
+        new TerrainType { name = "HighGrass",           color = new Color(0.10f, 0.45f, 0.15f), threshold = 0.62f },
+        new TerrainType { name = "Montain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.70f },
+        new TerrainType { name = "MidMontain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.80f },
+        new TerrainType { name = "HighMontain",           color = new Color(0.55f, 0.50f, 0.45f), threshold = 0.90f },
+        new TerrainType { name = "Snow",           color = new Color(0.95f, 0.95f, 1.00f), threshold = 1.00f } };
+
+        Generate();
+    }
+    
 
     public void Generate()
     {
@@ -101,11 +119,11 @@ public class MapGenerator2D : MonoBehaviour
 
         return terrains[terrains.Length - 1].name;
     }
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
+            print("generate");
             Generate();
         }
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3919171308823333326}
   - component: {fileID: 4358603933385397302}
   m_Layer: 0
-  m_Name: stone
+  m_Name: Snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33d5fcf8df3e17742b316800accb3a60, type: 2}
+  - {fileID: 2100000, guid: 6d6f054e2b41c6f4fa294573d97afbed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7438dd2ff6798344cae5a7eb7ba945b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
-  Height: 5
+  Height: 8
 --- !u!65 &4358603933385397302
 BoxCollider:
   m_ObjectHideFlags: 0
