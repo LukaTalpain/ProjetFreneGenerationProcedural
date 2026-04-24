@@ -346,6 +346,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
   tilemap: {fileID: 1195758412}
   storage: {fileID: 11400000, guid: f11064519a7042b44a8f6b1e99ade150, type: 2}
+  mapLength: 5
 --- !u!1 &1829172144
 GameObject:
   m_ObjectHideFlags: 0

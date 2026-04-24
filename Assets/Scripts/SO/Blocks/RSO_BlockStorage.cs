@@ -12,7 +12,6 @@ public class BlockInfo
 {
     public float threshold;
     public TileBase Tile;
-    public GameObject Prefab;
     public BlockStruct blockStruct;
 }
 [Serializable]
@@ -23,9 +22,15 @@ public struct BlockStruct
 
 public enum BlockType : ushort
 {
+    DeepWater,
     Water,
     Sand,
     Grass,
+    MidGrass,
+    HighGrass,
     Stone,
-    Snow
+    MidStone,
+    HighStone,
+    Snow,
+    air
 }
