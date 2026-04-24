@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1511e493e13c774793e3d78465448e8, type: 3}
+  m_Name: RSO_BlockStorage
+  m_EditorClassIdentifier: Assembly-CSharp::RSO_BlockStorage
+  blockInfos:
+  - Tile: {fileID: 0}
+    blockStruct:
+      blockType: 0

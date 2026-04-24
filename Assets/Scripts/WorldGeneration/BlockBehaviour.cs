@@ -15,11 +15,3 @@ public class BlockBehaviour : MonoBehaviour
     }
 }
 
-public enum BlockType
-{
-    Water,
-    Sand,
-    Grass,
-    Stone,
-    Snow
-}
