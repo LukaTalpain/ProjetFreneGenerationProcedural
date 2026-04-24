@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
   Height: 3
+  Type: 2
 --- !u!65 &2060058976741154128
 BoxCollider:
   m_ObjectHideFlags: 0

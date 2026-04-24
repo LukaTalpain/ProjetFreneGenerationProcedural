@@ -23,6 +23,8 @@ MonoBehaviour:
   - {fileID: 1778554577468001228, guid: 1edb874c1d7c78b4d9a4425dabe6d9ac, type: 3}
   - {fileID: 1778554577468001228, guid: 4654805bf7838b54c990dcf5224c4084, type: 3}
   - {fileID: 1778554577468001228, guid: 2acd87594f3ac9c4e8c9974911c5453d, type: 3}
+  m_EnnemiPrefab:
+  - {fileID: 0}
   tiles:
   - {fileID: 11400000, guid: 25046c1efde806546b401120107f8a11, type: 2}
   - {fileID: 11400000, guid: 152224d3417a63b4186f5cb7b44e38ad, type: 2}

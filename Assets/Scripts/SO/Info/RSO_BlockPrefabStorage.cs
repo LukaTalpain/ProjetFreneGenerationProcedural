@@ -8,5 +8,6 @@ using UnityEngine.Tilemaps;
 public class RSO_BlockPrefabStorage : ScriptableObject
 {
     public List<GameObject> m_BlockPrefabs = new List<GameObject>();
+    public List<GameObject> m_EnnemiPrefab = new List<GameObject>();
     public List<Tile> tiles = new List<Tile>();
 }

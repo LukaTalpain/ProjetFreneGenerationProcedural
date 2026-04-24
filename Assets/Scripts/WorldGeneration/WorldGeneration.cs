@@ -21,6 +21,11 @@ public class WorldGeneration : MonoBehaviour
     private Tilemap tilemap;
     private int width;
     private int height;
+
+    [Header("Generation param : ")]
+    public int EnnemiNbr;
+    
+
     private void OnEnable()
     {
         tilemapGenerated.TilemapGenerated += TakeEvent;
@@ -42,6 +47,8 @@ public class WorldGeneration : MonoBehaviour
             Destroy(worldObjects[i]);
         }
         worldObjects.Clear();
+
+        //erase event and monsters 
     }
     private IEnumerator GenerateWorld ()
     {
@@ -57,11 +64,17 @@ public class WorldGeneration : MonoBehaviour
             {
                 TileBase tile = tilemap.GetTile(new Vector3Int(i, j));
                 GameObject _Block = ChooseBlock(tile);
-                print(tile.name);
                 GameObject _Instance = Instantiate(_Block, new Vector3(i, 0.5f, j), Quaternion.Euler(new Vector3(0, 0, 0)), worldParent.transform);
                 worldObjects.Add(_Instance);
             }
         }
+        for (int i = 0; i < EnnemiNbr ; i++)
+        {
+            int y = Random.Range(0,blockStorage.m_EnnemiPrefab.Count);
+            int z = Random.Range(0,worldObjects.Count);
+            worldObjects[z].GetComponent<BlockBehaviour>().TryPlaceStructure(blockStorage.m_EnnemiPrefab[y]);
+        }
+
     }
 
 
