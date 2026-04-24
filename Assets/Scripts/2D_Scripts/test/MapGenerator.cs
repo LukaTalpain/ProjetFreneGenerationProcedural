@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,12 +9,25 @@ public class MapGenerator : MonoBehaviour
 
     [Header("Tilemap cible")]
     public Tilemap tilemap;
+    [Header("RSO")]
+    public RSO_BlockStorage storage;
 
+    [Header("Tableau de valeur ")]
 
+    private BlockStruct[,,] chunk;
+    private List<BlockStruct[,,]> chunkList;   
 
     private void Start()
     {
+        chunk = new BlockStruct[storage.blockInfos.Length, storage.blockInfos.Length, storage.blockInfos.Length];
         Generate();
+    }
+    private void Update()
+    {
+        if (Input .GetKeyDown(KeyCode.P))
+        {
+            Generate();
+        }
     }
 
 
@@ -21,25 +35,37 @@ public class MapGenerator : MonoBehaviour
     {
         float[,] map = NoiseMap.Generate(noise.width, noise.height,noise);
 
+        DoTilemap(map);
+
         for (int y = 0; y < noise.height; y++)
         {
             for (int x = 0; x < noise.width; x++)
             {
-                TileBase tileName = GetTile(map[x, y]);
-                
+
+            }
+        }
+
+    }
+
+    private void DoTilemap(float[,] value)
+    {
+        for (int y = 0; y < noise.height; y++)
+        {
+            for (int x = 0; x < noise.width; x++)
+            {
+                TileBase tile = GetTile(value[x, y]);
+                tilemap.SetTile(new Vector3Int(x, y, 0), tile);
             }
         }
     }
-
-
-    private TileBase GetTile(float index)
+    private TileBase GetTile(float index) // a therme il faudrat enlever la partie tilemap et directement le traduire en blockStruct
     {
+        foreach (var BlockInfo in storage.blockInfos)
+            if (index <= BlockInfo.threshold)
+                return BlockInfo.Tile;
 
-        //if (height <= terrain.threshold)
-                //return terrain.name;
+        return storage.blockInfos[storage.blockInfos.Length - 1].Tile;
 
-        //return terrains[terrains.Length - 1].name;
-
-        return null;
     }
+
 }

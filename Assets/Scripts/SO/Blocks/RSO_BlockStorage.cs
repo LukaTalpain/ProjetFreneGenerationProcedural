@@ -10,7 +10,9 @@ public class RSO_BlockStorage : ScriptableObject
 [Serializable]
 public class BlockInfo
 {
+    public float threshold;
     public TileBase Tile;
+    public GameObject Prefab;
     public BlockStruct blockStruct;
 }
 [Serializable]

@@ -168,7 +168,7 @@ MonoBehaviour:
   tilemapGenerated: {fileID: 11400000, guid: c3e203c531056cd4687d51c7303e4326, type: 2}
   tilemapInfo: {fileID: 11400000, guid: a88a9155d3d0116469bb610b6735cde1, type: 2}
   blockStorage: {fileID: 11400000, guid: cdc7101e01a94304aa21dc16d5b75c26, type: 2}
-  EnnemiNbr: 20
+  EnnemiNbr: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

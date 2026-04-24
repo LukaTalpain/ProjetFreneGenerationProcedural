@@ -13,6 +13,53 @@ MonoBehaviour:
   m_Name: RSO_BlockStorage
   m_EditorClassIdentifier: Assembly-CSharp::RSO_BlockStorage
   blockInfos:
-  - Tile: {fileID: 0}
+  - threshold: 0.1
+    Tile: {fileID: 11400000, guid: 152224d3417a63b4186f5cb7b44e38ad, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.2
+    Tile: {fileID: 11400000, guid: 25046c1efde806546b401120107f8a11, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.3
+    Tile: {fileID: 11400000, guid: b7926beee95f16c4498918e611677fe9, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.4
+    Tile: {fileID: 11400000, guid: b492d2333691a5b4c9834733247e04fb, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.5
+    Tile: {fileID: 11400000, guid: fa5ee09d69fc3a947bdd79c8d783c599, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.6
+    Tile: {fileID: 11400000, guid: bbccd73bbccf48e4c9aa047994904b36, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.7
+    Tile: {fileID: 11400000, guid: 37e652994b2ad354aa1391dc874ae04e, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.8
+    Tile: {fileID: 11400000, guid: 50a31d68cfe54154182aa353611c204c, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 0.9
+    Tile: {fileID: 11400000, guid: 63fe146aa4f790c48adee52d89a74da2, type: 2}
+    Prefab: {fileID: 0}
+    blockStruct:
+      blockType: 0
+  - threshold: 1
+    Tile: {fileID: 11400000, guid: 3880396c59eccda46af19df1af9fef46, type: 2}
+    Prefab: {fileID: 0}
     blockStruct:
       blockType: 0
