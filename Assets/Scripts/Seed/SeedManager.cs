@@ -31,11 +31,15 @@ public static class SeedManager
         ActualState = MyRandomState.WorldGeneration;
     }
 
+
+
     public static int MyRandom(int min, int max, MyRandomState state)
     {
         InitializeState(state);
         return UnityEngine.Random.Range (min, max);
     }
+
+
 
     public static float MyRandom(float min, float max, MyRandomState state)
     {
@@ -43,6 +47,9 @@ public static class SeedManager
 
         return UnityEngine.Random.Range(min, max);
     }
+
+
+
 
     private static void InitializeState(MyRandomState state)
     {
