@@ -1,11 +1,9 @@
-
-
 using System;
 using System.Collections.Generic;
 
 public static class SeedManager 
 {
-    private static Dictionary<MyRandomState, UnityEngine.Random.State> states;
+    private static Dictionary<MyRandomState, UnityEngine.Random.State> states = new();
     private static MyRandomState ActualState;
     public static int seed;
 
@@ -60,6 +58,7 @@ public static class SeedManager
 
 }
 
+[Serializable]
 public enum MyRandomState
 {
     WorldGeneration,

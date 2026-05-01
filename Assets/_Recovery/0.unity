@@ -197,7 +197,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: f518feb234b886d44a41bb361226f70e, type: 2}
   tilemap: {fileID: 2070077902}
   generationSettings:
-    Size: 100
+    Size: 10000
     tileBases:
     - {fileID: 11400000, guid: 152224d3417a63b4186f5cb7b44e38ad, type: 2}
     - {fileID: 11400000, guid: 25046c1efde806546b401120107f8a11, type: 2}
