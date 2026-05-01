@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f078f52e37f894683b73285a458944, type: 3}
   m_Name: settings
   m_EditorClassIdentifier: Assembly-CSharp::RSO_Settings
-  Seed: 563
+  Seed: 124
   mapSize: 100
   mapScale: 0.05
   tileBases:
