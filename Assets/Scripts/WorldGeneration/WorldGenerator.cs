@@ -1,16 +1,15 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
 public class WorldGenerator : MonoBehaviour
 {
     [SerializeField] private RSE_GenerateWorld generateWorldEvent;
+    [SerializeField] private RSE_EndWorldGeneration2D endWorldGenerationEvent;
     [SerializeField] private RSO_Settings settings;
+    [SerializeField] private RSO_BlockStorage blockStorage;
     [SerializeField] private Tilemap tilemap;
 
-
+    private int WorldGenerated = 0;
     private void OnEnable()
     {
         generateWorldEvent.GenerateWorldEvent += GenerateWorld;
@@ -20,10 +19,25 @@ public class WorldGenerator : MonoBehaviour
         generateWorldEvent.GenerateWorldEvent -= GenerateWorld;
     }
 
+    private void GenerateWorld()
+    {
+        if (WorldGenerated == 0)
+        {
+            GenerateWorld2D(MyRandomState.FirstWorldGeneration);
+        }
+        else if (WorldGenerated == 1)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
 
 
 
-    private void GenerateWorld ()
+    private void GenerateWorld2D ( MyRandomState randomState)
     {
         tilemap.ClearAllTiles();    
         for (int i = 0; i < settings.mapSize; i++)
@@ -34,6 +48,10 @@ public class WorldGenerator : MonoBehaviour
                 SetTilemapTile(new Vector3Int(i,j), height);
             }
         }
+        WorldGenerated++;
+        endWorldGenerationEvent.InvokeBaseWorldGeneration2DEnded();
+        GenerateMapEventFromRandomState(randomState);
+
     }
 
 
@@ -48,12 +66,29 @@ public class WorldGenerator : MonoBehaviour
     {
         y = y * 100;
         int mapHeight = 100;
-        float zoneSize = (float)mapHeight / settings.tileBases.Count;
-        int index = Mathf.Clamp((int)(y / zoneSize), 0, settings.tileBases.Count - 1);
-        return settings.tileBases[index];
+        float zoneSize = (float)mapHeight / blockStorage.blocks.Count;
+        int index = Mathf.Clamp((int)(y / zoneSize), 0, blockStorage.blocks.Count - 1);
+        return blockStorage.blocks[index].tileBase;
     }
 
 
+
+    private void GenerateMapEventFromRandomState (MyRandomState randomState)
+    {
+        int ennemiNbr = SeedManager.MyRandom(3,15, randomState);
+        
+        for (int i = 0; i < ennemiNbr; i++)
+        {
+            for (int x= 0; x < SeedManager.MyRandom(0,settings.mapSize,randomState); x++)
+            {
+                for (int y = 0; y < SeedManager.MyRandom(0, settings.mapSize, randomState); y++)
+                {
+                    tilemap.SetTile(new Vector3Int(x, y), blockStorage.ennemi.tileBase);
+                }
+            }
+        }
+
+    }
 
 }
 

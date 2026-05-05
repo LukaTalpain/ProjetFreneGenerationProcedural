@@ -12,5 +12,5 @@ public class RSO_Settings : ScriptableObject
 
     public int mapSize;
     public float mapScale;
-    public List<TileBase> tileBases = new List<TileBase>();
+    
 }

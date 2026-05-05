@@ -26,7 +26,7 @@ public static class SeedManager
         {
             states.Add(value, UnityEngine.Random.state);
         }
-        ActualState = MyRandomState.WorldGeneration;
+        ActualState = MyRandomState.FirstWorldGeneration;
     }
 
 
@@ -61,6 +61,6 @@ public static class SeedManager
 [Serializable]
 public enum MyRandomState
 {
-    WorldGeneration,
+    FirstWorldGeneration,
     fight
 }

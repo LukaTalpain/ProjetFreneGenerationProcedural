@@ -156,14 +156,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792604683}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2070077900}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1388489032
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388489034}
   - component: {fileID: 1388489033}
+  - component: {fileID: 1388489035}
   m_Layer: 0
   m_Name: WorldGenerator
   m_TagString: Untagged
@@ -194,21 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldGenerator
   generateWorldEvent: {fileID: 11400000, guid: ad5543fdde9c0774299ab338d814d19f, type: 2}
+  endWorldGenerationEvent: {fileID: 11400000, guid: 22411229930dd534586a9f0aa7f70fd6, type: 2}
   settings: {fileID: 11400000, guid: f518feb234b886d44a41bb361226f70e, type: 2}
+  blockStorage: {fileID: 11400000, guid: ed65bfc23bdb56a4aa4a729efa0afe50, type: 2}
   tilemap: {fileID: 2070077902}
-  generationSettings:
-    Size: 100
-    tileBases:
-    - {fileID: 11400000, guid: 152224d3417a63b4186f5cb7b44e38ad, type: 2}
-    - {fileID: 11400000, guid: 25046c1efde806546b401120107f8a11, type: 2}
-    - {fileID: 11400000, guid: b7926beee95f16c4498918e611677fe9, type: 2}
-    - {fileID: 11400000, guid: b492d2333691a5b4c9834733247e04fb, type: 2}
-    - {fileID: 11400000, guid: fa5ee09d69fc3a947bdd79c8d783c599, type: 2}
-    - {fileID: 11400000, guid: bbccd73bbccf48e4c9aa047994904b36, type: 2}
-    - {fileID: 11400000, guid: 37e652994b2ad354aa1391dc874ae04e, type: 2}
-    - {fileID: 11400000, guid: 50a31d68cfe54154182aa353611c204c, type: 2}
-    - {fileID: 11400000, guid: 63fe146aa4f790c48adee52d89a74da2, type: 2}
-    - {fileID: 11400000, guid: 3880396c59eccda46af19df1af9fef46, type: 2}
 --- !u!4 &1388489034
 Transform:
   m_ObjectHideFlags: 0
@@ -218,12 +208,28 @@ Transform:
   m_GameObject: {fileID: 1388489032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.15628, y: -0, z: 55.60336}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388489035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388489032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91335d766cdfcf24ea2f4aa07704ea2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World3DGenerator
+  generation2D: {fileID: 11400000, guid: 22411229930dd534586a9f0aa7f70fd6, type: 2}
+  settings: {fileID: 11400000, guid: f518feb234b886d44a41bb361226f70e, type: 2}
+  blockStorage: {fileID: 11400000, guid: ed65bfc23bdb56a4aa4a729efa0afe50, type: 2}
+  tilemap: {fileID: 2070077902}
 --- !u!1 &1715737122
 GameObject:
   m_ObjectHideFlags: 0
