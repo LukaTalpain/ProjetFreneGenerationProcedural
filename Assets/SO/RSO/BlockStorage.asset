@@ -33,3 +33,6 @@ MonoBehaviour:
     tileBase: {fileID: 11400000, guid: 63fe146aa4f790c48adee52d89a74da2, type: 2}
   - gameobject: {fileID: 1778554577468001228, guid: 2acd87594f3ac9c4e8c9974911c5453d, type: 3}
     tileBase: {fileID: 11400000, guid: 3880396c59eccda46af19df1af9fef46, type: 2}
+  ennemi:
+    gameobject: {fileID: 2676596743619459689, guid: 9f113036aae8a0c449573dfffc0978ab, type: 3}
+    tileBase: {fileID: 11400000, guid: b6febc96aac08e84c829554c141feacd, type: 2}

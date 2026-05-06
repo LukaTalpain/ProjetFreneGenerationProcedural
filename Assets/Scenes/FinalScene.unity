@@ -199,6 +199,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: f518feb234b886d44a41bb361226f70e, type: 2}
   blockStorage: {fileID: 11400000, guid: ed65bfc23bdb56a4aa4a729efa0afe50, type: 2}
   tilemap: {fileID: 2070077902}
+  mapEventStorage: {fileID: 11400000, guid: 5c63d6eb594b04d43be16d20db28c5f7, type: 2}
 --- !u!4 &1388489034
 Transform:
   m_ObjectHideFlags: 0

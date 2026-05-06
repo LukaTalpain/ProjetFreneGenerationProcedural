@@ -8,6 +8,7 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField] private RSO_Settings settings;
     [SerializeField] private RSO_BlockStorage blockStorage;
     [SerializeField] private Tilemap tilemap;
+    [SerializeField] private RSO_MapEventStorage mapEventStorage;
 
     private int WorldGenerated = 0;
     private void OnEnable()
@@ -27,11 +28,11 @@ public class WorldGenerator : MonoBehaviour
         }
         else if (WorldGenerated == 1)
         {
-
+            print("world generated = 1");
         }
         else
         {
-
+            print("world generated = 1+");
         }
     }
 
@@ -75,20 +76,41 @@ public class WorldGenerator : MonoBehaviour
 
     private void GenerateMapEventFromRandomState (MyRandomState randomState)
     {
+        int x;
+        int y;  
+        //ennemi generator
         int ennemiNbr = SeedManager.MyRandom(3,15, randomState);
         
         for (int i = 0; i < ennemiNbr; i++)
         {
-            for (int x= 0; x < SeedManager.MyRandom(0,settings.mapSize,randomState); x++)
-            {
-                for (int y = 0; y < SeedManager.MyRandom(0, settings.mapSize, randomState); y++)
-                {
-                    tilemap.SetTile(new Vector3Int(x, y), blockStorage.ennemi.tileBase);
-                }
-            }
+            x = SeedManager.MyRandom(0,settings.mapSize,randomState);
+            y = SeedManager.MyRandom(0, settings.mapSize, randomState);
+            tilemap.SetTile(new Vector3Int(x, y), blockStorage.ennemi.tileBase);
+            mapEventStorage.ListEnnemiPos.Add(new Vector2Int(x, y));
+
         }
 
+        //generate Village
+
+        x = SeedManager.MyRandom(0, settings.mapSize, randomState);
+        y = SeedManager.MyRandom(0, settings.mapSize, randomState);
+        tilemap.SetTile(new Vector3Int(x, y), blockStorage.ennemi.tileBase);
+        mapEventStorage.ListHousePos.Add(new Vector2Int(x, y));
+
+        //generate Tower 
+
+
     }
+
+    private Vector2Int ChooseOppositeZoneFromPos(Vector2Int pos)
+    {
+        //choose left or right 
+
+
+
+        return Vector2Int.zero;
+    }
+
 
 }
 
