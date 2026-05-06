@@ -41,6 +41,9 @@ public class WorldGenerator : MonoBehaviour
     private void GenerateWorld2D ( MyRandomState randomState)
     {
         tilemap.ClearAllTiles();    
+        mapEventStorage.ListEnnemiPos.Clear();
+        mapEventStorage.ListHousePos.Clear();
+        mapEventStorage.TowerPos = Vector2Int.zero;
         for (int i = 0; i < settings.mapSize; i++)
         {
             for (int j = 0; j < settings.mapSize; j++)
