@@ -8,6 +8,8 @@ public class RSO_BlockStorage : ScriptableObject
     public List<Block> blocks = new List<Block>();
 
     public Block ennemi;
+    public Block mainHouse;
+    public Block tower;
 }
 
 [Serializable]

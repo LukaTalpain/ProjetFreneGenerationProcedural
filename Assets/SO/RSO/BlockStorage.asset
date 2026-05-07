@@ -36,3 +36,9 @@ MonoBehaviour:
   ennemi:
     gameobject: {fileID: 2676596743619459689, guid: 9f113036aae8a0c449573dfffc0978ab, type: 3}
     tileBase: {fileID: 11400000, guid: b6febc96aac08e84c829554c141feacd, type: 2}
+  mainHouse:
+    gameobject: {fileID: 0}
+    tileBase: {fileID: 11400000, guid: 22e92c9ac3a4ee84e9a7d56a08ea1963, type: 2}
+  tower:
+    gameobject: {fileID: 0}
+    tileBase: {fileID: 11400000, guid: b4cebb7d150066341bf1bb7149eb892d, type: 2}
