@@ -4,6 +4,16 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private RSO_Settings settings;
     [SerializeField] private RSE_GenerateWorld generateWorld;
+    [SerializeField] private RSE_StartFight fightEvent;
+
+    private void OnEnable()
+    {
+        fightEvent.EndBossFightEvent += EndBossFight;
+    }
+    private void OnDisable()
+    {
+        fightEvent.EndBossFightEvent -= EndBossFight;
+    }
     private void Awake()
     {
         SeedManager.InitializeSeed(settings.Seed);
@@ -22,6 +32,10 @@ public class GameManager : MonoBehaviour
             generateWorld.InvokeGenerateWorld();
         }
     }
-
+    private void EndBossFight()
+    {
+        Debug.Log("Boss Fight Ended");
+        generateWorld.InvokeGenerateWorld();
+    }   
 
 }

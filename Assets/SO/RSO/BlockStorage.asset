@@ -37,8 +37,14 @@ MonoBehaviour:
     gameobject: {fileID: 2676596743619459689, guid: 9f113036aae8a0c449573dfffc0978ab, type: 3}
     tileBase: {fileID: 11400000, guid: b6febc96aac08e84c829554c141feacd, type: 2}
   mainHouse:
-    gameobject: {fileID: 0}
+    gameobject: {fileID: 6881016312471137895, guid: c5b00d3884b09e141aefb807390d642c, type: 3}
+    tileBase: {fileID: 11400000, guid: 22e92c9ac3a4ee84e9a7d56a08ea1963, type: 2}
+  _house:
+    gameobject: {fileID: 7163784518668706726, guid: 86ae8ef2de9dcdd43843299d71588c88, type: 3}
     tileBase: {fileID: 11400000, guid: 22e92c9ac3a4ee84e9a7d56a08ea1963, type: 2}
   tower:
-    gameobject: {fileID: 0}
+    gameobject: {fileID: 633894777664835172, guid: ec5f26b11e7a2f842a223c05fff63617, type: 3}
     tileBase: {fileID: 11400000, guid: b4cebb7d150066341bf1bb7149eb892d, type: 2}
+  player:
+    gameobject: {fileID: 2279092826994468192, guid: 047da4bd2a92fc24a89b090d6651fb4c, type: 3}
+    tileBase: {fileID: 0}

@@ -9,7 +9,11 @@ public class RSO_BlockStorage : ScriptableObject
 
     public Block ennemi;
     public Block mainHouse;
+    public Block _house;
     public Block tower;
+
+    [Header("player")]
+    public Block player;
 }
 
 [Serializable]
